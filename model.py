@@ -16,7 +16,6 @@ class HSD_PretrainedModel():
         self.model = (text_classifier_learner(self.data_clas, AWD_LSTM, pretrained=False)
                         .load(model_path, with_opt=False))
         
-        
     def load_data(self, data_path):
         X_train = pd.read_csv(data_path/'02_train_text.csv')
         y_train = pd.read_csv(data_path/'03_train_label.csv')
@@ -35,9 +34,17 @@ class HSD_PretrainedModel():
                         .databunch(bs=self.bs, num_workers=1))
     
     def predict(self, text):
-        res = self.model.predict(text)[2].cpu().numpy()
-        if res[2] > self.thres:
-            return f'Hate speech detected! {res}'
-        elif res[1] > self.thres:
-            return f'Offensive language {res}'
-        else: return f'Clean {res}'
+        return self.model.predict(text)
+
+#     def predict(self, text):
+#         if self.model.predict(text)[1].cpu().numpy() == 2:
+#             return text
+#         else: return None
+    
+#     def predict(self, text):
+#         res = self.model.predict(text)[2].cpu().numpy()
+#         if res[2] > self.thres:
+#             return f'Hate speech detected! {res}'
+#         elif res[1] > self.thres:
+#             return f'Offensive language {res}'
+#         else: return f'Clean {res}'
