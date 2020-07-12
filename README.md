@@ -6,7 +6,8 @@
   * Dữ liệu sử dụng là dữ liệu từ cuộc thi [VLSP2019-HSD](https://vlsp.org.vn/vlsp2019/eval/hsd) được tổ chức bởi VLSP (Association for Vietnamese Language and Speech Processing).
 
 ## Chức năng
-  Ứng dụng có chức năng phát hiện ngôn ngữ thù địch trên mạng xã hội [VOZ](https://voz.vn/). Từ đó cảnh báo, giúp chặn những người dùng phát ngôn ngôn ngữ thù địch.
+  * Ứng dụng có chức năng phát hiện ngôn ngữ thù địch trên mạng xã hội [VOZ](https://voz.vn/). Từ đó cảnh báo, giúp chặn những người dùng phát ngôn ngôn ngữ thù địch.
+  * Demo youtube: [Link](https://youtu.be/ai5mxNoz3sg)
 
 ## Kỹ thuật
 ### Crawler threads trên mạng xã hội
